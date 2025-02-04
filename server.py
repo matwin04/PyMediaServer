@@ -9,7 +9,7 @@ def getDB():
     return conn
 def initDB():
     dbPath = "media.db"
-    sqlFiles = ["sql/movies.sql", "sql/tvshows.sql", "sql/music.sql", "sql/videos.sql"]
+    sqlFiles = ["sql/movies.sql", "sql/shows.sql", "sql/music.sql", "sql/videos.sql"]
 
     with sqlite3.connect(dbPath) as conn:
         cursor = conn.cursor()
