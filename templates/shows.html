@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Shows</title>
+</head>
+<body>
+    <h1>Shows</h1>
+    <a href="/">Return</a>
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Title</th>
+          <th>Season</th>
+          <th>Episode</th>
+          <th>Episode Name</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for show in shows %}
+        <tr>
+          <td>{{show.id}}</td>
+          <td>{{show.show_name}}</td>
+          <td>{{show.season}}</td>
+          <td>{{show.episode}}</td>
+        </tr>
+        {%endfor%}
+      </tbody>
+    </table>
+  </body>
+  </html>
+</html>
