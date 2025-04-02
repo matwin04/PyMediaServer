@@ -1,20 +1,17 @@
+<!-- templates/index.html -->
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>Index</title>
+  <title>PyMediaServer</title>
 </head>
 <body>
-    <h1>MediaManagerPy</h1>
-    <a href="/videos">Videos</a>
-    <a href="/settings">Settings</a>
-
-
-    <ul>
-        <li><a href="/movies">Movies</a></li>
-        <li><a href="/shows">TV Shows</a></li>
-        <li><a href="/music">Music</a> </li>
-        <li><a href="/videos">Videos</a> </li>
-    </ul>
+  <h1>Welcome to PyMediaServer</h1>
+  <p>Server IP: {{ ip }}</p>
+  <ul>
+    <li><a href="/music">Music</a></li>
+    <li><a href="/videos">Videos</a></li>
+    <li><a href="/movies">Movies</a></li>
+    <li><a href="/tvshows">TV Shows</a></li>
+  </ul>
 </body>
 </html>

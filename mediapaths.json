@@ -1,0 +1,7 @@
+{
+  "base": "/Users/frostie/MediaLibrary",
+  "music": "Music",
+  "videos": "Movies",
+  "tvshows": "TVShows",
+  "photos": "Photos"
+}

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>TV Shows</title>
+</head>
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Title</th>
+                <th>Season</th>
+                <th>Episode</th>
+            </tr>
+        </thead>
+        <tbody>
+    {% for row in tvshows %}
+    <tr>
+      <td>{{ row['id'] }}</td>
+      <td>{{ row['showname'] }}</td>
+      <td>{{ row['season'] }}</td>
+      <td>{{ row['episode'] }}</td>
+      <td>
+        <audio controls>
+          <source src="/media/{{ row['filepath'] }}">
+        </audio>
+      </td>
+    </tr>
+    {% endfor %}
+  </tbody>
+    </table>
+
+</body>
+</html>
