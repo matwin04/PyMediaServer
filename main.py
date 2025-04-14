@@ -7,7 +7,7 @@ import shutil
 from mutagen import File as MutagenFile
 from pymediainfo import MediaInfo
 from datetime import datetime
-
+from dave import start_dav_server
 app = Flask(__name__)
 app.secret_key = "supersecretkey"
 DATABASE = 'PyMediaServer.db'
@@ -177,7 +177,13 @@ def upload_tv():
     flash("TV Show uploaded!")
     return redirect(url_for('tvshows'))
 
+@app.route('/users')
+def users():
+    conn = connectDB()
+    users = conn.execute("SELECT * FROM users").fetchall()
+    return render_template("")
 if __name__ == '__main__':
     initDB()
     createMediaFolders()
-    app.run(host=IPAddr, port=8181, debug=True)
+    start_dav_server()
+    app.run(host=IPAddr, port=7075, debug=True)

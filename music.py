@@ -2,7 +2,9 @@ import os
 import shutil
 from flask import render_template, request, flash, redirect
 from main import app, connectDB, IPAddr, getMediaFolder
-from meta import extract_metadata
+from threading import Thread
+from dave import start_dav_server
+
 @app.route('/music')
 def music():
     conn = connectDB()

@@ -1,0 +1,13 @@
+version: "3.8"
+services:
+  pymediaserver:
+    container_name: pymediaserver
+    build: .
+    ports:
+      - 8909:8090 # change if your app uses a different port
+    volumes:
+      - .:/app # live reload on code changes
+      - /NAS/MediaNet:/media # map your media folder
+    env_file:
+      - .env
+    restart: unless-stopped
