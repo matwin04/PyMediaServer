@@ -3,19 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <title>TV Shows</title>
+    <style>
+    </style>
 </head>
 <body>
+
+    <a href="/tvshows/upload">Upload</a>
     <table>
         <thead>
             <tr>
                 <th>ID</th>
-                <th>Title</th>
+                <th>Show</th>
                 <th>Season</th>
                 <th>Episode</th>
             </tr>
         </thead>
         <tbody>
-    {% for row in tvshows %}
+    {% for shows in row %}
     <tr>
       <td>{{ row['id'] }}</td>
       <td>{{ row['showname'] }}</td>

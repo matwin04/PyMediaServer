@@ -123,14 +123,16 @@ def extract_video_metadata(filepath):
 @app.route('/')
 def index():
     return render_template('index.html', ip=IPAddr)
+@app.route("/music")
+def music():
+    conn = connectDB()
+
 
 @app.route('/tvshows')
 def tvshows():
     conn = connectDB()
     shows = conn.execute("SELECT * FROM tvshows").fetchall()
-    conn.close()
-    return render_template("tvshows.html", tvshows=shows, ip=IPAddr)
-
+    
 @app.route('/tvshows/upload', methods=['GET', 'POST'])
 def upload_tv():
     if request.method == 'GET':
