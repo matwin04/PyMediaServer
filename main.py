@@ -7,7 +7,7 @@ import shutil
 from mutagen import File as MutagenFile
 from pymediainfo import MediaInfo
 from datetime import datetime
-from dave import start_dav_server
+
 app = Flask(__name__)
 app.secret_key = "supersecretkey"
 DATABASE = 'PyMediaServer.db'
@@ -79,7 +79,6 @@ def extract_metadata(filepath):
         "album": album,
         "duration": duration,
     }
-
 def extract_video_metadata(filepath):
     media_info = MediaInfo.parse(filepath)
     metadata = {
@@ -185,5 +184,4 @@ def users():
 if __name__ == '__main__':
     initDB()
     createMediaFolders()
-    start_dav_server()
-    app.run(host=IPAddr, port=7075, debug=True)
+    app.run(host="0.0.0.0", port=7075, debug=True)
